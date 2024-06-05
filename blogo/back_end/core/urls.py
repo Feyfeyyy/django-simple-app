@@ -1,5 +1,5 @@
 """
-URL configuration for mysite project.
+URL configuration for blogo project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -20,6 +20,6 @@ from graphene_django.views import GraphQLView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("graphql", GraphQLView.as_view(graphiql=True)),
+    path("graphql/", GraphQLView.as_view(graphiql=True)),
 ]
 
