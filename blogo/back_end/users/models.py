@@ -32,6 +32,9 @@ class CustomUserManager(BaseUserManager):
 
 
 class User(AbstractUser):
+    """
+    Custom User model with email as the unique identifier and subscription type.
+    """
     email = models.EmailField(max_length=255, unique=True)
     name = models.CharField(max_length=255)
     password = models.CharField(max_length=255)
