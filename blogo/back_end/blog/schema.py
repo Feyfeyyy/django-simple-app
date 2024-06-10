@@ -1,9 +1,10 @@
-import graphene
+import strawberry
 
 
-class Query(graphene.ObjectType):
-    hello = graphene.String(default_value="Hi!")
+@strawberry.type
+class Query:
+    hello: str = "Hello, world!"
 
 
-schema = graphene.Schema(query=Query)
+schema = strawberry.Schema(query=Query)
 

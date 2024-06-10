@@ -9,7 +9,7 @@ packages = [{include = "django_simple_app"}]
 [tool.poetry.dependencies]
 python = "^3.11"
 django = "^5.0.3"
-graphene-django = "^3.2.0"
+strawberry-graphql-django = "^0.42.0"
 
 
 [build-system]
