@@ -16,8 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+
 from strawberry.django.views import AsyncGraphQLView
-from users.schema import schema
+
+from .schema import schema
 
 urlpatterns = [
     path("admin/", admin.site.urls),
