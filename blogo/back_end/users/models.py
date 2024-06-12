@@ -32,13 +32,17 @@ class CustomUserManager(BaseUserManager):
 
 
 class User(AbstractUser):
-    email = models.EmailField(max_length=255, unique=True)
+    """
+    Custom User model with email as the unique identifier and subscription type.
+    """
+    email = models.EmailField(max_length=255, unique=True, blank=False, null=False)
     name = models.CharField(max_length=255)
     password = models.CharField(max_length=255)
-    username = None
+    username = models.CharField(max_length=255, unique=True, blank=True, null=True)
 
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['name']
+    USERNAME_FIELD = 'username'
+    EMAIL_FIELD = 'email'
+    REQUIRED_FIELDS = ['name', 'email']
     FREE = 'FR'
     PRO = 'PR'
 
